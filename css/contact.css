@@ -2,14 +2,14 @@
     background: var(--color-bg1);
     padding: 4rem;
     display: grid;
-    grid-template-columns: 50% 60%;
+    grid-template-columns: 44% 60%;
     gap: 4rem;
     height: 30rem;
     margin: 7rem auto;
     border-radius: 1rem;
 }
 
-/* ======================== ASIDE ============================ */
+/* =============================================== ASIDE =================================================== */
 
 .contact_aside {
     background: var(--color-primary);
@@ -56,21 +56,21 @@
 }
 
 .contact_socials a:hover {
-    background: transparent;
+    background: var(--color-danger);
 }
 
-/* =============================== FORM ======================== */
+/* ====================================================== FORM =============================================== */
 
 .contact_form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    margin-right: 4rem;
+    margin-right: 2rem;
 }
 
 .form_name {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .contact_form input[type="text"] {

@@ -2,26 +2,26 @@
     margin: 0;
     padding: 0;
     outline: 0;
+    border: 0;
     text-decoration: none;
     box-sizing: border-box;
+    
 }
 
 :root {
-    --color-primary: rgb(59, 2, 73);
-    --color-success: rgb(37, 246, 22);
-    --color-warning: rgb(242, 255, 0);
-    --color-danger: rgb(229, 7, 7);
-    --color-danger-variant: rgb(71, 0, 113);
-    --color-white: rgb(255, 255, 255);
-    --color-light: rgb(121, 121, 121);
-    --color-black: rgb(16, 10, 10);
-    --color-bg: rgb(27, 27, 43);
-    --color-bg1: rgb(32, 32, 62);
-    --color-bg2: rgb(96, 84, 157);
+    --color-primary: #6c63ff;
+    --color-success: #00bf8e;
+    --color-warning: #f7c94b;
+    --color-danger: #f75842;
+    --color-danger-variant: rgba(247, 88, 66, 0.4);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: #000;
+    --color-bg: #1f2641;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
 
-    --container-width-lg: 80%;
-    --container-width-md: 90%;
-    --container-width-sm: 94%;
+    --container-width-lg: 76%;
 
     --transition: all 400ms ease;
     
@@ -69,7 +69,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1.3;
+    font-size: 1.3rem;
 }
 
 a {
@@ -78,7 +78,7 @@ a {
 
 img {
     width: 100%;
-    display: black;
+    display: block;
     object-fit: cover;
 }
 
@@ -92,7 +92,7 @@ img {
     transition: var(--transition);
 }
 
-.btn-hover {
+.btn:hover {
     background: transparent;
     color: var(--color-white);
     border-color: var(--color-white);
@@ -104,10 +104,10 @@ img {
 }
 
 
-/*==================== NAVBAR ======================= */
+/* ===================================================== NAVBAR ===================================================== */
 
 nav {
-    background-color: rgb(23, 17, 35);
+    background-color: transparent;
     width: 100vw;
     height: 5rem;
     position: fixed;
@@ -115,19 +115,15 @@ nav {
     z-index: 11;
 }
 
-
-/*change navbar style on scroll*/
-.window-scroll {
-    background: var(--color-primary);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-
 .nav_container {
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+nav button {
+    display: none;                                                              /* remove*/
 }
 
 .nav_menu {
@@ -145,8 +141,13 @@ nav {
     color: var(--color-bg2);
 }
 
+/*change navbar style on scroll using JS*/
+.window-scroll {
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 
-/* ====================== HEADER ======================== */
+/* ===================================================== HEADER ===================================================== */
 
 header {
     position: relative;
@@ -158,7 +159,7 @@ header {
 
 .header_container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr;
     align-items: center;
     gap: 5rem;
     height: 100%;
@@ -170,16 +171,16 @@ header {
 
 
 
-/* ======================== CATEGORIES ======================= */
+/* ===================================================== CATEGORIES ===================================================== */
 
 .categories {
     background: var(--color-bg1);
-    height: 40rem;
+    height: 45rem;
 }
 
 .categories h1 {
     line-height: 1;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .categories_container {
@@ -189,6 +190,7 @@ header {
 
 .categories_left {
     margin: 4rem;
+    margin-left: -1;
 }
 
 .categories_left p {
@@ -209,7 +211,7 @@ header {
 }
 
 .category:hover {
-    box-shadow: 0 1rem 3rem rgb(230, 227, 227);
+    box-shadow: 0 3rem 3rem rgba(231, 231, 231, 0.2);
 }
 
 
@@ -227,12 +229,27 @@ header {
     font-size: 0.85rem;
 }
 
+.category:nth-child(1) .category_icon ,
+.category:nth-child(6) .category_icon {
+    background-color: #5e1ea6;
+}
+.category:nth-child(2) .category_icon {
+    background: var(--color-danger);
+}
+.category:nth-child(3) .category_icon ,
+.category:nth-child(5) .category_icon  {
+    background: var(--color-success);
+}
+.category:nth-child(4) .category_icon {
+    background: var(--color-warning);
+}
 
-/* ======================= POPULAR COURSES ====================== */
+
+/* ===================================================== POPULAR COURSES ===================================================== */
 
 
 .courses {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .courses_container {
@@ -263,11 +280,11 @@ header {
 }
 
 
-/* =============================== FOOTER ========================= */
+/* ===================================================== FOOTER ===================================================== */
 
 footer {
     background: var(--color-bg1);
-    padding-top: 5rem;
+    padding-top: 3rem;
     font-size: 0.9rem;
 }
 
@@ -285,13 +302,32 @@ margin-bottom: 1.2rem;
     margin:  0 0 2rem;
 }
 
+footer ul li{
+    margin-bottom: 0.7rem;
+    list-style-type: none;
+}
+
 footer ul li a:hover{
     text-decoration: underline;
 }
 
+.footer_socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.footer_copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--color-bg2);
+
+}
 
 
-/* ============================ NAVBAR ============================ */
+/* ===================================================== NAVBAR ===================================================== */
 
 nav button{
     display: inline-block;
@@ -313,6 +349,7 @@ nav button{
     flex-direction: column;
     gap: 0;
     display: none;
+    list-style-type: none;
  }
 
 .nav_menu li {
