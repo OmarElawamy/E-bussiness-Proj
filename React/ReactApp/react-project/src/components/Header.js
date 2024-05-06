@@ -23,7 +23,7 @@ class Header extends React.Component{
 
 
             <div class="container nav_container">
-                <a href="">
+                <a href="/">
                     <h4>MyCode;</h4>
                 </a>
                 <ul class="nav_menu">
